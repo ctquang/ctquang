@@ -1,16 +1,26 @@
-## Hi there 👋
+```zsh
+> neofetch
+```
 
-<!--
-**ctquang/ctquang** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<img align="left" src="./assets/avatar.gif" alt="avatar" width="320" />
 
-Here are some ideas to get you started:
+```csharp
+namquangg747@gmail.com
+----------------------
+OS: Arch Linux x86_64
+Shell: zsh 5.8
+Pronouns: He/Him
+Location: Dongnai, Vietnam
+Frameworks: nun
+Languages: Vietnamese
+Learning: Prompt Engineering
+Hobbies: Cooking, Gaming
+Commits: 5
+Stars: 0
+Discord: nyagamied
+```
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<p align="left">
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="./assets/palette.svg" alt="color palette" height="20" />
+</p>
