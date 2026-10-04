@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - template.md
+      - templates/**
       - .github/workflows/update-readme.yml
 
 permissions:
@@ -36,11 +37,17 @@ jobs:
           COMMITS=$(echo "$DATA" | jq '.data.user.contributionsCollection.totalCommitContributions // 0')
           STARS=$(echo "$DATA" | jq '[.data.user.repositories.nodes[].stargazerCount] | add // 0')
           echo "Commits: $COMMITS | Stars: $STARS"
-          sed -e "s/{{COMMITS}}/$COMMITS/g" -e "s/{{STARS}}/$STARS/g" template.md > README.md
+          for f in template.md templates/*.svg; do
+            case "$f" in
+              template.md) out=README.md ;;
+              *) out="assets/$(basename "$f")" ;;
+            esac
+            sed -e "s/{{COMMITS}}/$COMMITS/g" -e "s/{{STARS}}/$STARS/g" "$f" > "$out"
+          done
 
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          git add README.md assets/info-*.svg
           git diff --cached --quiet || (git commit -m "chore: update profile stats" && git push)
